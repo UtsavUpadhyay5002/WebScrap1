@@ -26,12 +26,18 @@ This Python script scrapes the web every 5 seconds to get the current **BITCOIN 
 5.  **Update Previous Price:**
     *   The previous price is updated with the current price for the next comparison.
 
-6.  **Delay:** The script pauses for 5 seconds using `time.sleep(5)` before repeating the process.
+6. **Logging**
+    *   Opens the 'btcTracker.csv' file in append mode ('a+').
+    *   Writes the date, time, and current Bitcoin price to the file, separated by commas.
+    *   Closes the file.
+
+7. **Delay:** The script pauses for 5 seconds using `time.sleep(5)` before repeating the process.
 
 ## **Requirements:** 📋
 *   Python 3
 *   `requests` library
 *   `beautifulsoup4` library
+*   optional - "btcTracker.csv" file with this in its first line "Date,Time,Price"
 
 ## **Installation:** 💾
 1.  Install the required libraries using pip:
@@ -48,7 +54,6 @@ This Python script scrapes the web every 5 seconds to get the current **BITCOIN 
 2.  The script will continuously monitor the Bitcoin price and notify you of significant changes.
 
 ## **Future Enhancements** 🚀
-- Implement a logging system 📈
 - Implement a more robust notification system: email, SMS, or push notifications to alert the user of price changes. 💌
 - Allow the user to configure the price change threshold ⚙️
 - Add support for other cryptocurrencies 💰
