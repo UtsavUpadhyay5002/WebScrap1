@@ -12,7 +12,6 @@ def compare(curPrice, prevPrice):
     else:
         return False
 
-
 #settimg up the initial price
 prevPrice = 0
 
@@ -23,10 +22,18 @@ while True:
     s = soup.find('div', class_='YMlKec fxKbKc')
     curPrice = float(s.text.replace(',',''))
 
-    if compare(curPrice, prevPrice):
-        print(time.strftime("%H:%M:%S: ") + "Price change of more than $10")
-    else:
-        print(time.strftime("%H:%M:%S: ") + "NO CHANGE")
+    #opening storage file
+    f = open('btcTracker.csv', 'a+')
+    f.write(time.strftime("%d-%m-%Y")  +','+  time.strftime("%H:%M:%S")  +','+  str(curPrice)  +  '\n')
+    f.close()
+
+    #skipping the first comparison, as the change will be naturally more than $10
+    if prevPrice != 0:
+        if compare(curPrice, prevPrice):
+            print(time.strftime("%H:%M:%S: ") + "Price change of more than $10")
+        else:
+            print(time.strftime("%H:%M:%S: ") + "NO MAJOR CHANGE")
+
     prevPrice = curPrice
 
     #checking every 5 seconds
