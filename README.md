@@ -2,7 +2,7 @@
 
 This Python script scrapes the web every 5 seconds to get the current **BITCOIN price from Google Finance** 🌐.
 
-## Features:** ✨
+## **Features:** ✨
 - Uses `requests` to fetch the HTML content from Google Finance.
 - Employs `BeautifulSoup` to parse the HTML and extract the Bitcoin price.
 - **Notifies the user if the price changes by more than $10.** 🔔
