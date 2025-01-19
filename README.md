@@ -54,7 +54,6 @@ This Python script scrapes the web every 5 seconds to get the current **BITCOIN 
 2.  The script will continuously monitor the Bitcoin price and notify you of significant changes.
 
 ## **Future Enhancements** 🚀
-- Implement a more robust notification system: email, SMS, or push notifications to alert the user of price changes. 💌
 - Allow the user to configure the price change threshold ⚙️
 - Add support for other cryptocurrencies 💰
 - Improve error handling ⚠️
