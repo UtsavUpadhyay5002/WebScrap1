@@ -10,14 +10,14 @@ import smtplib
 def sendEmail(prevPrice, curPrice):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login('upadhyayr003@gmail.com','WordPass_003RUpadhyay')
+    server.login('your_email','password')
 
     subject = "Substantial price change in BTC"
     body = "price has changed from " + str(prevPrice) + " to " + str(curPrice)
 
     msg = f"Subject: {subject}\n\n{body}"
 
-    server.sendmail('upadhyayr003@gmail.com', 'upadhyayr003@gmail.com', msg)
+    server.sendmail('your_email', 'receiver's_email', msg)
 
 
 #method to compare the prices; returns true if the difference is more than $10
